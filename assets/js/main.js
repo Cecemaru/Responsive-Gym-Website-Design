@@ -83,7 +83,48 @@ const calculateBmi = (e) => {
     // Remove message four seconds
     setTimeout(() => {
       calculateMessage.textContent = "";
-    }, 4000);
+    }, 5000);
   }
 };
 calculateForm.addEventListener("submit", calculateBmi);
+
+/* =============== EMAIL JS =============== */
+const contactForm = document.getElementById("contact-form"),
+  contactMessage = document.getElementById("contact-message"),
+  contactUser = document.getElementById("contact-user");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  // Check if the field has a value
+  if (contactUser.value === "") {
+    //Add and remove color
+    contactMessage.classList.remove("color-green");
+    contactMessage.classList.add("color-red");
+
+    //Show Message
+    contactMessage.textContent = "You must enter your mail";
+
+    // Remove message three seconds
+    setTimeout(() => {
+      contactMessage.textContent = "";
+    }, 2000);
+  } else {
+    // emailjs form settings Key
+    emailjs
+      .sendForm("serviceID", "templateID", "#Form", "publicKey")
+      .then(() => {
+        // Show message and add color
+        contactMessage.classList.add("color-green");
+        contactMessage.textContent = "You registered successfully";
+
+        //Remove message after three seconds
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 3000);
+      });
+    // To clear the input user
+    contactUser.value = "";
+  }
+};
+contactForm.addEventListener("submit", sendEmail);
