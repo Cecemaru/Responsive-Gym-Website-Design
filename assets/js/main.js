@@ -86,5 +86,4 @@ const calculateBmi = (e) => {
     }, 4000);
   }
 };
-
 calculateForm.addEventListener("submit", calculateBmi);
