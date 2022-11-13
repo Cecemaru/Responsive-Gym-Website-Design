@@ -151,6 +151,14 @@ img {
   overflow: hidden;
 }
 
+.color-green {
+  color: var(--first-color);
+}
+
+.color-red {
+  color: hsl(0, 80%, 64%);
+}
+
 /* ===================== HEADER & NAV =================== */
 .header {
   width: 100%;
@@ -667,5 +675,5 @@ img {
 
 .calculate__message {
   position: absolute;
-  transform: translate(1rem);
+  transform: translateY(1rem);
 }
