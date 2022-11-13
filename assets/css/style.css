@@ -785,3 +785,43 @@ img {
   position: absolute;
   transform: translateY(1rem);
 }
+
+/* ============== SCROLL BAR ============== */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(79, 4%, 15%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(79, 4%, 25%);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(79, 4%, 35%);
+}
+
+/* ============ SCROLL UP ============= */
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -30%;
+  background-color: var(--first-color);
+  display: inline-flex;
+  color: var(--title-color-black);
+  font-size: 1.25rem;
+  box-shadow: 0 2px 8px hsla(62, 80%, 50%, 0.9);
+  border-radius: 25%;
+  z-index: var(--z-tooltip);
+  transition: 0.3s;
+}
+
+.scrollup:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem;
+}
